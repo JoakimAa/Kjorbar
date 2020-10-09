@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Kjørbar</string>
+
+    <string name="navigation_main_to_profile">Profil</string>
+    <string name="navigation_main_to_calculate">Kalkuler</string>
+    <string name="navigation_calculation_to_add_unit">Legg til enhet</string>
+    <string name="navigation_calculation_to_home">Hjem</string>
+
+    <string name="profile_weight">Vekt:</string>
+    <string name="profile_height">Height:</string>
+    <string name="profile_age">Alder:</string>
+    <string name="profile_gender">Kjønn:</string>
+    <string name="profile_max_per_mill">Maks promille:</string>
+    <string name="profile_max_units">Maks enheter:</string>
+
+    <string name="calculation_drivable_in">Kjørbar om:</string>
+    <string name="calculation_per_mill">Promille:</string>
+
 </resources>
