@@ -71,7 +71,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:hint="@string/profile_gender"
-                android:inputType="number" />
+                android:inputType="text" />
 
             <TextView
                 android:id="@+id/profileMaxPerMill"
@@ -106,6 +106,7 @@
                 android:inputType="number" />
 
             <DatePicker
+                android:id="@+id/datePicker"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
