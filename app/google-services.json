@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "39185372731",
+    "firebase_url": "https://kjorbar-f257c.firebaseio.com",
+    "project_id": "kjorbar-f257c",
+    "storage_bucket": "kjorbar-f257c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:39185372731:android:ab24660ec5ccaaae9bee1e",
+        "android_client_info": {
+          "package_name": "no.hiof.kjorbar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "39185372731-vek8q57o62rib8hv190pd79a4uebrbrq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "no.hiof.kjorbar",
+            "certificate_hash": "635923b2c3dfe6a88ca0d0fa8b099dfc62280592"
+          }
+        },
+        {
+          "client_id": "39185372731-2r43cl75t5c07d6chb00iptro3491mor.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLFJtUNpzXjKiYOmuKn2ZH4XWcEMKtiKA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "39185372731-2r43cl75t5c07d6chb00iptro3491mor.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
