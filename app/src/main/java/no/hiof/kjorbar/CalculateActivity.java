@@ -20,7 +20,7 @@ public class CalculateActivity extends AppCompatActivity {
         btnAddUnit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(view.getContext(), AddUnitActivity.class);
+                Intent intent = new Intent(view.getContext(), AddUnitActivity.class);
                 startActivity(intent);
             }
         });

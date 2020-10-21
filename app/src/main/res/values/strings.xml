@@ -4,7 +4,6 @@
     <string name="navigation_main_to_profile">Profil</string>
     <string name="navigation_main_to_calculate">Kalkuler</string>
     <string name="navigation_calculation_to_add_unit">Legg til enhet</string>
-    <string name="navigation_calculation_to_home">Hjem</string>
 
     <string name="profile_weight">Vekt:</string>
     <string name="profile_height">Height:</string>
@@ -15,5 +14,9 @@
 
     <string name="calculation_drivable_in">Kjørbar om:</string>
     <string name="calculation_per_mill">Promille:</string>
+
+    <string name="log_out">Logg ut</string>
+    <string name="save">Lagre endringer</string>
+
 
 </resources>

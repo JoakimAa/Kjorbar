@@ -30,4 +30,16 @@
         app:layout_constraintTop_toBottomOf="@+id/btnNavToProfile"
         app:layout_constraintVertical_bias="0.085" />
 
+    <Button
+        android:id="@+id/btnLogOut"
+        android:layout_width="198dp"
+        android:layout_height="100dp"
+        android:text="@string/log_out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNavToProfile"
+        app:layout_constraintVertical_bias="0.964" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
