@@ -22,7 +22,6 @@ import no.hiof.kjorbar.model.User;
 
 public class ProfileActivity extends AppCompatActivity {
     final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-    //private TextView profileWeight, profileHeight, profileAge, profileGender, profileMaxPerMill, profileMaxPerUnit;
     private EditText inpProfileWeight, inpProfileHeight, inpProfileAge, inpProfileGender, inpProfileMaxPerMill, inpProfileMaxPerUnit;
     // TODO: DatePicker og TimePicker i et vindu
     private DatePicker datePicker;

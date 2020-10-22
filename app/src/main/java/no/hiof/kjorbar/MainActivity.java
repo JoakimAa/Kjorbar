@@ -104,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (resultCode == RESULT_OK) {
             FirebaseUser currentUser = auth.getCurrentUser();
+            assert currentUser != null;
             Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.loged_in_as) + currentUser.getDisplayName(), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getApplicationContext(), "Signed in cancelled", Toast.LENGTH_LONG).show();
