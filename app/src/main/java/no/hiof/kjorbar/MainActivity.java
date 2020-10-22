@@ -22,18 +22,18 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private final int RC_SIGN_IN = 123;
     private Button btnNavToProfile, btnNavToCalculate;
-    private FirebaseAuth auth;
+    private FirebaseAuth auth = FirebaseAuth.getInstance();
     private FirebaseAuth.AuthStateListener authStateListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        auth = FirebaseAuth.getInstance();
-
         createAuthStateListener();
+        setViews();
+    }
 
+    private void setViews() {
         Button button = findViewById(R.id.btnLogOut);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
-                                Toast.makeText(getApplicationContext(), "User logged out", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.loged_out), Toast.LENGTH_LONG).show();
                             }
                         });
             }
@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivityForResult(
                             AuthUI.getInstance()
                                     .createSignInIntentBuilder()
+                                    .setIsSmartLockEnabled(false)
                                     .setAvailableProviders(providers)
                                     .build(),
                             RC_SIGN_IN);
@@ -103,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (resultCode == RESULT_OK) {
             FirebaseUser currentUser = auth.getCurrentUser();
-            Toast.makeText(getApplicationContext(), "Signed in as " + currentUser.getDisplayName(), Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), getApplicationContext().getString(R.string.loged_in_as) + currentUser.getDisplayName(), Toast.LENGTH_LONG).show();
         } else {
             Toast.makeText(getApplicationContext(), "Signed in cancelled", Toast.LENGTH_LONG).show();
         }

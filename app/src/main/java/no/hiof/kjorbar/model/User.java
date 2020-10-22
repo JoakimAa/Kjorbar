@@ -8,6 +8,8 @@ public class User {
     private int weight, height, age;
     private String gender;
 
+    public User() { }
+
     public User(String uid, int weight, int height, int age, String gender) {
         this.uid = uid;
         this.weight = weight;
@@ -19,10 +21,6 @@ public class User {
     @Exclude
     public String getUid() {
         return uid;
-    }
-
-    public void setUid(String uid) {
-        this.uid = uid;
     }
 
     public int getWeight() {

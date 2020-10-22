@@ -17,6 +17,9 @@
 
     <string name="log_out">Logg ut</string>
     <string name="save">Lagre endringer</string>
+    <string name="changes_have_been_saved">Endringene har blitt lagret</string>
 
+    <string name="loged_in_as">Logget inn som: \u0020 </string>
+    <string name="loged_out">Du har logget ut </string>
 
 </resources>

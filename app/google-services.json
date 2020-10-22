@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "39185372731-ik184g195356ir9q57nsb6nb8t49v3g1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "no.hiof.kjorbar",
+            "certificate_hash": "488e89c7ee4aadffcff1fa18ccecf0faad5165b8"
+          }
+        },
+        {
           "client_id": "39185372731-vek8q57o62rib8hv190pd79a4uebrbrq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
