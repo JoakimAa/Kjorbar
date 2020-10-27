@@ -1,4 +1,4 @@
-package no.hiof.kjorbar;
+package no.hiof.kjorbar.activities;
 
 import android.os.Bundle;
 import android.view.View;
@@ -18,14 +18,13 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import no.hiof.kjorbar.R;
 import no.hiof.kjorbar.model.User;
 
 public class ProfileActivity extends AppCompatActivity {
     final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-    private EditText inpProfileWeight, inpProfileHeight, inpProfileAge, inpProfileGender, inpProfileMaxPerMill, inpProfileMaxPerUnit;
+    private EditText inpProfileWeight, inpProfileHeight, inpProfileAge, inpProfileGender;
     // TODO: DatePicker og TimePicker i et vindu
-    private DatePicker datePicker;
-    private TimePicker timePicker;
     private Button btnSave;
     private FirebaseFirestore firestoreDb;
     private CollectionReference usersCollectionReference;
@@ -73,8 +72,6 @@ public class ProfileActivity extends AppCompatActivity {
         inpProfileHeight = findViewById(R.id.inpProfileHeight);
         inpProfileAge = findViewById(R.id.inpProfileAge);
         inpProfileGender = findViewById(R.id.inpProfileGender);
-        inpProfileMaxPerMill = findViewById(R.id.inpProfileMaxPerMill);
-        inpProfileMaxPerUnit = findViewById(R.id.inpProfileMaxPerUnit);
     }
 
     private void setUserValues(User user) {

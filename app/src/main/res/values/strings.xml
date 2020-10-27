@@ -4,6 +4,10 @@
     <string name="navigation_main_to_profile">Profil</string>
     <string name="navigation_main_to_calculate">Kalkuler</string>
     <string name="navigation_calculation_to_add_unit">Legg til enhet</string>
+    <string name="navigation_calculate_to_previous_calculations">Se tidligere kalkuleringer</string>
+    <string name="navigation_calculate_to_new_calculation">Ny kalkulering</string>
+    <string name="navigation_calculate_to_set_limits">Legg inn begrensninger</string>
+    <string name="navigation_calculate_to_calculation">Start kalkulering</string>
 
     <string name="profile_weight">Vekt:</string>
     <string name="profile_height">Height:</string>
@@ -13,6 +17,7 @@
     <string name="profile_max_units">Maks enheter:</string>
 
     <string name="calculation_drivable_in">Kjørbar om:</string>
+    <string name="calculation_drivable_at">Kjørbar innen:</string>
     <string name="calculation_per_mill">Promille:</string>
 
     <string name="log_out">Logg ut</string>

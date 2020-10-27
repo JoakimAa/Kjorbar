@@ -1,8 +1,10 @@
-package no.hiof.kjorbar;
+package no.hiof.kjorbar.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import no.hiof.kjorbar.R;
 
 public class AddUnitActivity extends AppCompatActivity {
 

@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".activities.StartNewCalculationActivity">
 
     <Button
-        android:id="@+id/btnPreviousCalculations"
+        android:id="@+id/btnSetLimits"
         android:layout_width="198dp"
         android:layout_height="100dp"
-        android:text="@string/navigation_calculate_to_previous_calculations"
+        android:text="@string/navigation_calculate_to_set_limits"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -18,16 +19,16 @@
         app:layout_constraintVertical_bias="0.12" />
 
     <Button
-        android:id="@+id/btnNewCalculation"
+        android:id="@+id/btnStartNewCalculation"
         android:layout_width="198dp"
         android:layout_height="100dp"
         android:layout_marginTop="44dp"
-        android:text="@string/navigation_calculate_to_new_calculation"
+        android:text="@string/navigation_calculate_to_calculation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnPreviousCalculations"
+        app:layout_constraintTop_toBottomOf="@+id/btnSetLimits"
         app:layout_constraintVertical_bias="0.085" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

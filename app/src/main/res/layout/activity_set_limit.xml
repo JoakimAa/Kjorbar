@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".activities.SetLimitActivity">
 
     <TextView
         android:id="@+id/profileMaxPerMill"
@@ -40,19 +43,28 @@
         android:inputType="number"
         android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
-    <DatePicker
-        android:id="@+id/datePicker"
+    <TextView
+        android:id="@+id/calculationDrivableIn"
         android:layout_width="match_parent"
-        android:layout_height="360dp"
-        android:layout_marginLeft="-30dp"
-        android:layout_marginRight="-30dp"
-        android:datePickerMode="spinner" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/calculation_drivable_at" />
+
+    <DatePicker
+            android:id="@+id/drivableInDatePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="-30dp"
+            android:layout_marginRight="-30dp"
+            android:calendarViewShown="false"
+            android:datePickerMode="spinner" />
 
     <TimePicker
-        android:id="@+id/timePicker"
+        android:id="@+id/drivableInTimePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="-30dp"
         android:layout_marginRight="-30dp"
         android:timePickerMode="spinner" />
+
 </LinearLayout>

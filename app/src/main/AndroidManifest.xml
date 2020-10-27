@@ -9,10 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddUnitActivity" />
-        <activity android:name=".CalculateActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.StartNewCalculationActivity"></activity>
+        <activity android:name=".activities.SetLimitActivity" />
+        <activity android:name=".activities.PreviousCalculations" />
+        <activity android:name=".activities.CalculationActivity" />
+        <activity android:name=".activities.AddUnitActivity" />
+        <activity android:name=".activities.CalculateActivity" />
+        <activity android:name=".activities.ProfileActivity" />
+        <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

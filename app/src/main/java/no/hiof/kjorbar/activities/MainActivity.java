@@ -1,4 +1,4 @@
-package no.hiof.kjorbar;
+package no.hiof.kjorbar.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,6 +18,8 @@ import com.google.firebase.auth.FirebaseUser;
 
 import java.util.Arrays;
 import java.util.List;
+
+import no.hiof.kjorbar.R;
 
 public class MainActivity extends AppCompatActivity {
     private final int RC_SIGN_IN = 123;
