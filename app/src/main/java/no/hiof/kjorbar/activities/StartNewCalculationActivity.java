@@ -10,16 +10,19 @@ import android.widget.Button;
 import com.google.firebase.installations.local.PersistedInstallationEntry;
 
 import no.hiof.kjorbar.R;
+import no.hiof.kjorbar.model.Calculation;
 
 public class StartNewCalculationActivity extends AppCompatActivity {
 
     private Button btnSetLimit;
     private Button bntStartNewCalculation;
+    private static Calculation calculation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_new_calculation);
+        calculation = new Calculation();
 
         btnSetLimit = findViewById(R.id.btnSetLimits);
         bntStartNewCalculation = findViewById(R.id.btnStartNewCalculation);
@@ -39,7 +42,9 @@ public class StartNewCalculationActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
 
-
+    public static Calculation getCalculation() {
+        return calculation;
     }
 }
