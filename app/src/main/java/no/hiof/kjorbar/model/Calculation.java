@@ -4,17 +4,21 @@ import com.google.firebase.database.Exclude;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Calculation {
+    UUID uuid = UUID.randomUUID();
     @Exclude
-    private String uid;
+    private String uid = uuid.toString();
     private CalculationLimit calculationLimit;
     private ArrayList<AlcoholUnit> alcoholUnits = new ArrayList<>();
 
     public Calculation() {}
 
-    public Calculation(String uid) {
+    public Calculation(String uid, CalculationLimit calculationLimit, ArrayList<AlcoholUnit> alcoholUnits) {
         this.uid = uid;
+        this.calculationLimit = calculationLimit;
+        this.alcoholUnits = alcoholUnits;
     }
 
     @Exclude

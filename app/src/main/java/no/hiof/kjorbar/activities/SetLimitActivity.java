@@ -9,15 +9,24 @@ import android.widget.TimePicker;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import no.hiof.kjorbar.R;
+import no.hiof.kjorbar.model.Calculation;
 import no.hiof.kjorbar.model.CalculationLimit;
+import no.hiof.kjorbar.model.User;
 
 public class SetLimitActivity extends AppCompatActivity {
-
     private TimePicker drivableInTime;
     private DatePicker drivableInDate;
     private EditText maxPerMill, maxUnit;
@@ -38,7 +47,7 @@ public class SetLimitActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        LocalDate date = LocalDate.of(drivableInDate.getYear(), drivableInDate.getMonth(), drivableInDate.getDayOfMonth());
+        LocalDate date = LocalDate.of(drivableInDate.getYear(), drivableInDate.getMonth() + 1, drivableInDate.getDayOfMonth());
         LocalTime time = LocalTime.of(drivableInTime.getHour(), drivableInTime.getMinute());
         LocalDateTime drivableInDateTime = LocalDateTime.of(date, time);
 
