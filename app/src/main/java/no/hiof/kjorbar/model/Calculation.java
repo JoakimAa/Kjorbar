@@ -12,13 +12,22 @@ public class Calculation {
     private String uid = uuid.toString();
     private CalculationLimit calculationLimit;
     private ArrayList<AlcoholUnit> alcoholUnits = new ArrayList<>();
+    private int userWeight;
+    private String userGender;
 
     public Calculation() {}
 
-    public Calculation(String uid, CalculationLimit calculationLimit, ArrayList<AlcoholUnit> alcoholUnits) {
+    public Calculation(int userWeight, String userGender) {
+        this.userWeight = userWeight;
+        this.userGender = userGender;
+    }
+
+    public Calculation(String uid, CalculationLimit calculationLimit, ArrayList<AlcoholUnit> alcoholUnits, int userWeight, String userGender) {
         this.uid = uid;
         this.calculationLimit = calculationLimit;
         this.alcoholUnits = alcoholUnits;
+        this.userWeight = userWeight;
+        this.userGender = userGender;
     }
 
     @Exclude
@@ -40,6 +49,22 @@ public class Calculation {
 
     public void addAlcoholUnit(AlcoholUnit alcoholUnit) {
         alcoholUnits.add(alcoholUnit);
+    }
+
+    public int getUserWeight() {
+        return userWeight;
+    }
+
+    public String getUserGender() {
+        return userGender;
+    }
+
+    public void setUserWeight(int userWeight) {
+        this.userWeight = userWeight;
+    }
+
+    public void setUserGender(String userGender) {
+        this.userGender = userGender;
     }
 }
 

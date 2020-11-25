@@ -20,6 +20,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import no.hiof.kjorbar.R;
+import no.hiof.kjorbar.helper.Dummy;
 
 public class MainActivity extends AppCompatActivity {
     private final int RC_SIGN_IN = 123;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         createAuthStateListener();
         setViews();
+        Dummy.populateUnits();
     }
 
     private void setViews() {

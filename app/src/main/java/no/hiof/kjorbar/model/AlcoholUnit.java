@@ -2,9 +2,10 @@ package no.hiof.kjorbar.model;
 
 public class AlcoholUnit {
     private String name, producer, category;
-    private int percent, amount;
+    private int amount;
+    private double percent;
 
-    public AlcoholUnit(String name, String producer, String category, int percent, int amount) {
+    public AlcoholUnit(String name, String producer, String category, double percent, int amount) {
         this.name = name;
         this.producer = producer;
         this.category = category;
@@ -24,7 +25,7 @@ public class AlcoholUnit {
         return category;
     }
 
-    public int getPercent() {
+    public double getPercent() {
         return percent;
     }
 

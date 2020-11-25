@@ -18,12 +18,14 @@ import com.google.firebase.installations.local.PersistedInstallationEntry;
 
 import no.hiof.kjorbar.R;
 import no.hiof.kjorbar.model.Calculation;
+import no.hiof.kjorbar.model.User;
 
 public class StartNewCalculationActivity extends AppCompatActivity {
 
     private Button btnSetLimit;
     private Button bntStartNewCalculation;
     private static Calculation calculation;
+    private User user;
 
     final FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     private FirebaseFirestore firestoreDb;
@@ -36,9 +38,11 @@ public class StartNewCalculationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_new_calculation);
-        calculation = new Calculation();
+
 
         setFireStoreReferences();
+        calculation = new Calculation();
+        setCalculationReference();
 
         btnSetLimit = findViewById(R.id.btnSetLimits);
         bntStartNewCalculation = findViewById(R.id.btnStartNewCalculation);
@@ -54,6 +58,8 @@ public class StartNewCalculationActivity extends AppCompatActivity {
         bntStartNewCalculation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                calculation.setUserGender(user.getGender());
+                calculation.setUserWeight(user.getWeight());
                 Intent intent = new Intent(view.getContext(), CalculationActivity.class);
                 startActivity(intent);
                 calculationCollectionReference.document(calculation.getUid()).set(calculation);
@@ -65,7 +71,12 @@ public class StartNewCalculationActivity extends AppCompatActivity {
         firestoreDb = FirebaseFirestore.getInstance();
         usersCollectionReference = firestoreDb.collection("users");
         assert firebaseUser != null;
+
         userDocumentReference = usersCollectionReference.document(firebaseUser.getUid());
+        setUserDocumentReference();
+    }
+
+    private void setCalculationReference() {
         calculationCollectionReference = userDocumentReference.collection("calculations");
         calculationDocumentReference = calculationCollectionReference.document(calculation.getUid());
         calculationDocumentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -74,6 +85,22 @@ public class StartNewCalculationActivity extends AppCompatActivity {
                 Calculation calculation = documentSnapshot.toObject(Calculation.class);
             }
         });
+    }
+
+    private void setUserDocumentReference() {
+        userDocumentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                user = documentSnapshot.toObject(User.class);
+                System.out.println("User reference");
+                System.out.println(user);
+            }
+        });
+    }
+
+    private void setCalculationUser() {
+        calculation.setUserWeight(user.getWeight());
+        calculation.setUserGender(user.getGender());
     }
 
     public static Calculation getCalculation() {
