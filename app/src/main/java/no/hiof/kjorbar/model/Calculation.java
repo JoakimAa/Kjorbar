@@ -4,6 +4,7 @@ import com.google.firebase.database.Exclude;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Calculation {
@@ -11,7 +12,8 @@ public class Calculation {
     @Exclude
     private String uid = uuid.toString();
     private CalculationLimit calculationLimit;
-    private ArrayList<AlcoholUnit> alcoholUnits = new ArrayList<>();
+    private List<AlcoholUnit> alcoholUnits = new ArrayList<>();
+    private double totalPerMill;
     private int userWeight;
     private String userGender;
 
@@ -30,6 +32,23 @@ public class Calculation {
         this.userGender = userGender;
     }
 
+    public double getTotalPerMill(double time) {
+        double totalGramOfAlcohol = 0;
+        for (AlcoholUnit alcoholUnit : alcoholUnits) {
+            totalGramOfAlcohol += alcoholUnit.getGramAlcoholPerUnit();
+        }
+
+        if (userGender.equals("Mann")) {
+           totalPerMill = totalGramOfAlcohol / ((userWeight * 0.7) - (0.15 * time));
+
+        }
+        if (userGender.equals("Kvinne")) {
+            totalPerMill = totalGramOfAlcohol / ((userWeight * 0.6) - (0.15 * time));
+        }
+
+        return totalPerMill;
+    }
+
     @Exclude
     public String getUid() {
         return uid;
@@ -44,11 +63,15 @@ public class Calculation {
     }
 
     public ArrayList<AlcoholUnit> getAlcoholUnits() {
-        return new ArrayList<AlcoholUnit>(alcoholUnits);
+        return new ArrayList<>(alcoholUnits);
     }
 
     public void addAlcoholUnit(AlcoholUnit alcoholUnit) {
         alcoholUnits.add(alcoholUnit);
+    }
+
+    public void removeAlcoholUnit(AlcoholUnit alcoholUnit) {
+        alcoholUnits.remove(alcoholUnit);
     }
 
     public int getUserWeight() {

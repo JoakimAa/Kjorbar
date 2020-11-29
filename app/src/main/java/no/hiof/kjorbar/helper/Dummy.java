@@ -16,22 +16,21 @@ import no.hiof.kjorbar.model.Calculation;
 import no.hiof.kjorbar.model.User;
 
 public class Dummy {
-
-
-
     public static void populateUnits() {
-        AlcoholUnit grevensApple = new AlcoholUnit("Grevens eple", "Grevens", "Cider", 4.7 , 5);
-        AlcoholUnit grevensPare = new AlcoholUnit("Grevens pære", "Grevens", "Cider", 4.7 , 5);
-        AlcoholUnit tuborg = new AlcoholUnit("Tuborg", "Tuborg", "Beer", 4.7 , 5);
-        AlcoholUnit heineken = new AlcoholUnit("Heineken", "Heineken", "Beer", 4.7 , 5);
+        AlcoholUnit grevensApple = new AlcoholUnit("Grevens eple", "Grevens", "Cider", 4.7, 5, "dl", 18.0);
+        AlcoholUnit grevensPare = new AlcoholUnit("Grevens pære", "Grevens", "Cider", 4.7, 5, "dl", 18.0);
+        AlcoholUnit tuborg = new AlcoholUnit("Tuborg", "Tuborg", "Beer", 4.7, 5, "dl", 18.0);
+        AlcoholUnit heineken = new AlcoholUnit("Heineken", "Heineken", "Beer", 4.7, 5, "dl", 18.0);
+        AlcoholUnit absolute = new AlcoholUnit("Absolute", "Absolute", "Booze", 40.0, 4, "cl", 12.6);
 
         FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
         CollectionReference drinksCollectionReference = firestoreDb.collection("units");
 
-        drinksCollectionReference.document("Cider").collection("Grevens").document("Eple").set(grevensApple);
-        drinksCollectionReference.document("Cider").collection("Grevens").document("Pære").set(grevensPare);
-        drinksCollectionReference.document("Beer").collection("Heineken").document("Heineken").set(heineken);
-        drinksCollectionReference.document("Beer").collection("Tuborg").document("Tuborg").set(tuborg);
+        drinksCollectionReference.add(grevensApple);
+        drinksCollectionReference.add(grevensPare);
+        drinksCollectionReference.add(heineken);
+        drinksCollectionReference.add(tuborg);
+        drinksCollectionReference.add(absolute);
     }
 
 }

@@ -8,6 +8,7 @@
     <string name="navigation_calculate_to_new_calculation">Ny kalkulering</string>
     <string name="navigation_calculate_to_set_limits">Legg inn begrensninger</string>
     <string name="navigation_calculate_to_calculation">Start kalkulering</string>
+    <string name="navigation_calculate_to_active_calculation">Aktiv kalkuleringer</string>
 
     <string name="profile_weight">Vekt:</string>
     <string name="profile_height">Height:</string>
@@ -26,5 +27,14 @@
 
     <string name="loged_in_as">Logget inn som: \u0020 </string>
     <string name="loged_out">Du har logget ut </string>
+    <string name="unit_name">Unit name</string>
+    <string name="percent">Percent</string>
+    <string name="_5">5</string>
+    <string name="percentSign">%</string>
+    <string name="_1">1</string>
+    <string name="_40">40</string>
+    <string name="_0_5">0.5</string>
+    <string name="dl">dl</string>
+    <string name="delete">X</string>
 
 </resources>

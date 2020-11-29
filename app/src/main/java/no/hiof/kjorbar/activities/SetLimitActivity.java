@@ -22,6 +22,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 import no.hiof.kjorbar.R;
+import no.hiof.kjorbar.datahandler.UpdateDB;
 import no.hiof.kjorbar.model.Calculation;
 import no.hiof.kjorbar.model.CalculationLimit;
 import no.hiof.kjorbar.model.User;
@@ -51,8 +52,9 @@ public class SetLimitActivity extends AppCompatActivity {
         LocalTime time = LocalTime.of(drivableInTime.getHour(), drivableInTime.getMinute());
         LocalDateTime drivableInDateTime = LocalDateTime.of(date, time);
 
-        StartNewCalculationActivity.getCalculation().setCalculationLimit(new CalculationLimit(Integer.parseInt(maxPerMill.getText().toString()), Integer.parseInt(maxUnit.getText().toString()), drivableInDateTime));
-        System.out.println(StartNewCalculationActivity.getCalculation().toString());
+        CalculateActivity.getCalculation().setCalculationLimit(new CalculationLimit(Integer.parseInt(maxPerMill.getText().toString()), Integer.parseInt(maxUnit.getText().toString()), drivableInDateTime));
+        UpdateDB.updateActiveCalculationDB();
+        System.out.println(CalculateActivity.getCalculation().toString());
 
     }
 }

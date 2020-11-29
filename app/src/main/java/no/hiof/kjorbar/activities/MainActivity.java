@@ -15,12 +15,19 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 import no.hiof.kjorbar.R;
+import no.hiof.kjorbar.datahandler.UnitsDataHandler;
 import no.hiof.kjorbar.helper.Dummy;
+import no.hiof.kjorbar.model.AlcoholUnit;
 
 public class MainActivity extends AppCompatActivity {
     private final int RC_SIGN_IN = 123;
@@ -34,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         createAuthStateListener();
         setViews();
-        Dummy.populateUnits();
+        setUnitsInUnitsList();
+        //Dummy.populateUnits();
     }
 
     private void setViews() {
@@ -125,5 +133,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         auth.addAuthStateListener(authStateListener);
+    }
+
+    private void setUnitsInUnitsList() {
+        FirebaseFirestore firestoreDb = FirebaseFirestore.getInstance();
+        CollectionReference unitsCollectionReference = firestoreDb.collection("units");
+
+        unitsCollectionReference
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : Objects.requireNonNull(task.getResult())){
+                                AlcoholUnit alcoholUnit = document.toObject(AlcoholUnit.class);
+                                UnitsDataHandler.addUnit(alcoholUnit);
+                            }
+                    }}});
     }
 }
